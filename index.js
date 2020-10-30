@@ -34,7 +34,7 @@ const pasteCode = e => {
 
     if(pastedDataArr.length <= inputs.length){
         pastedDataArr.forEach( (char, index, thisArg) => {
-            inputs[index].value = char || '';
+            inputs[index].value = char;
 
             if(index === thisArg.length - 1 && inputs[index].nextElementSibling){
                 inputs[index].nextElementSibling.focus();
