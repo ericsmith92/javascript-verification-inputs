@@ -4,11 +4,7 @@ const inputs = form.querySelectorAll('input[type=text]');
 const handleInput = e => {
     const input = e.target;
     if(input.nextElementSibling && input.value.trim() !== ''){
-        if(input.nextElementSibling.value){
-            input.nextElementSibling.select();
-        }else{
-            input.nextElementSibling.focus();
-        }
+        input.nextElementSibling.value ? input.nextElementSibling.select() : input.nextElementSibling.focus();
     }
 }
 
@@ -20,6 +16,9 @@ const handleBackspace = e => {
     const input = e.target;
 
     if(input.previousElementSibling){
+        if(input.value){
+            input.value = '';
+        }
         input.previousElementSibling.focus();
     }
 }
